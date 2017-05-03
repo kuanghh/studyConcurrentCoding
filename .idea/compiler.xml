@@ -25,8 +25,8 @@
         <module name="studyConcurrentCoding" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="studyConcurrentCoding" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="studyConcurrentCoding" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

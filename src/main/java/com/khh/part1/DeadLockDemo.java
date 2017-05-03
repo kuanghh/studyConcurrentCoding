@@ -1,5 +1,6 @@
 package com.khh.part1;
 
+
 /**
  * Created by 951087952@qq.com on 2017/4/29.
  * 演示死锁，并查看dump线程
