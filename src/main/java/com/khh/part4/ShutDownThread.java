@@ -8,7 +8,7 @@ package com.khh.part4;
  *      当前线程 ：Thread-one------- Count i = 105789833
         当前线程 ：Thread-two------- Count i = 115044
  */
-public class ShutDown {
+public class ShutDownThread {
 
     private static class Runner implements Runnable{
         private long i;
@@ -21,7 +21,6 @@ public class ShutDown {
             }
             System.out.println("当前线程 ：" + Thread.currentThread().getName() + "-------" + " Count i = " + i);
         }
-
         public void cancel(){
             on = false;
         }
