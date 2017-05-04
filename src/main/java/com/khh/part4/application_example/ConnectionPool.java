@@ -58,7 +58,7 @@ public class ConnectionPool {
             }else{
                 long futrue = System.currentTimeMillis() + mills;
                 long remaining = mills;
-                /*
+                /**
                     书上的代码如下，个人分析：
                         当要跳出while循环的情况有3中
                         1）池空，已超时
@@ -67,24 +67,28 @@ public class ConnectionPool {
                         如果是跳出while循环的情况是1,返回的是null
                         如果是跳出while循环的情况是2，返回的是Connection对象
                         如果是跳出while循环的情况是3，依然可以返回Connection对象，而不是null，因此改进一下代码
-                    while(pool.isEmpty() && remaining > 0){
-                        pool.wait();
-                        remaining = futrue - System.currentTimeMillis();
-                    }
-                    Connection result = null;
-                    if(!pool.isEmpty()){
-                        result = pool.removeFirst();
-                    }
-                    return result;
-                */
+                 */
+
+                /**书上的代码*/
+                /*while(pool.isEmpty() && remaining > 0){
+                    pool.wait();
+                    remaining = futrue - System.currentTimeMillis();
+                }
+                Connection result = null;
+                if(!pool.isEmpty()){
+                    result = pool.removeFirst();
+                }
+                return result;*/
+
+                /**个人修改后的代码*/
                 while(pool.isEmpty() && remaining > 0){
                     pool.wait();
                     remaining = futrue - System.currentTimeMillis();
                 }
-                //超时了  根据上面的分析，当未超时，池肯定不空
+                //超时了
                 if(remaining <= 0){
                     return null;
-                }else{
+                }else{//根据上面的分析，若未超时，池肯定不空
                     return pool.removeFirst();
                 }
             }
