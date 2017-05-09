@@ -37,6 +37,9 @@ import java.util.concurrent.locks.ReentrantLock;
      Lock by [4].Waiting By[3]
      Lock by [3].Waiting By[]
      Lock by [3].Waiting By[]
+
+    证明了，使用非公平锁的前提下，刚释放锁的线程再次获取同步状态的几率会非常大，使得其它线程只能在同步队列中等待
+            使用公平锁的前提下，等待越久的线程越是能得到优先满足
  */
 public class FairAndUnfairTest {
     private static Lock fairLock = new ReentrantLock2(true);
