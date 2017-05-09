@@ -13,7 +13,7 @@ package com.khh.part3;
  *      在这三行代码中，在某一些JIT编译器上2，3行代码会进行重排序
  *      那么可能发生一种情况，
  *      当线程A执行了memory = allocate();instance = memory; 时，
- *      线程B调用判断if(instance == null)为false，直接并返回instance，这样instance对象尚为初始化
+ *      线程B调用判断第4行的if(instance == null)为false，直接并返回instance，这样instance对象尚为初始化
  *
  * 所以此优化是不对的
  *
