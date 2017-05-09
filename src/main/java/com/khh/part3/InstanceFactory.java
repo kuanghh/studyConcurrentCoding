@@ -9,9 +9,9 @@ public class InstanceFactory {
     private InstanceFactory(){}
 
     private static class InstanceHolder{
-        public static InstanceFactory instanceFactory;
+        public static InstanceFactory instanceFactory = new InstanceFactory();
     }
-    public static InstanceFactory getInstance(){
+    public static InstanceFactory getFactory(){
         return InstanceHolder.instanceFactory;
     }
 
