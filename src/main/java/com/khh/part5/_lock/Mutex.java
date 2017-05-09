@@ -7,7 +7,7 @@ import java.util.concurrent.locks.Lock;
 
 /**
  * Created by 951087952@qq.com on 2017/5/6.
- * 自定义一个独占锁
+ * 自定义一个独占锁(属于排他锁)
  */
 public class Mutex implements Lock{
 

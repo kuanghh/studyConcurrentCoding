@@ -8,7 +8,7 @@ import java.util.concurrent.locks.Lock;
 /**
  * Created by 951087952@qq.com on 2017/5/9.
  *
- * 自定义个一个 只允许至多两个线程同时访问，超过两个线程的访问将被阻塞 的锁
+ * 自定义个一个 只允许至多两个线程同时访问，超过两个线程的访问将被阻塞 的锁(属于排他锁)
  *
  * 因为支持多个线程访问，所以是共享式访问，需要使用同步器提供的acquireShared(int args )方法等和Shared相关的方法
  *
