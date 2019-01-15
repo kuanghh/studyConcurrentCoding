@@ -7,7 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by 951087952@qq.com on 2017/5/10.
  * 使用Condition 实现有界对列的实现
- * 当队列为空，队列的获取操作将会阻塞获取线程，知道队列中有新增元素，当队列已满时，队列的插入操作将会阻塞插入线程，知道队列出现"空位"
+ * 当队列为空，队列的获取操作将会阻塞获取线程，知道队列中有新增元素，
+ * 当队列已满时，队列的插入操作将会阻塞插入线程，知道队列出现"空位"
  */
 public class BoundedQueue<T> {
     private Object[] items;
@@ -46,7 +47,8 @@ public class BoundedQueue<T> {
     }
 
     /**
-     * 由头部删除一个元素，如果数组为空，则删除线程进入等待状态，知道有新添加元素
+     * 由头部删除一个元素，如果数组为空，
+     * 则删除线程进入等待状态，知道有新添加元素
      * @return
      * @throws InterruptedException
      */
