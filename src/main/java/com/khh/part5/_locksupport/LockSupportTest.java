@@ -7,6 +7,8 @@ import java.util.concurrent.locks.LockSupport;
  * 测试一下LockSupportApi
  *
  *     LockSupport.park(); 用来阻塞当前线程
+ *     LockSupport.park(Object blocker);
+ *          阻塞当前线程，并记录当前线程等待的对象（阻塞对象）
  *     LockSupport.unpark(Thread thread)唤醒某个线程
  *     LockSupport.parkNanos(long nanos)
  *          阻塞当前线程，最长不超过nanos纳秒，返回条件在park()的基础上增加了超时返回
